@@ -1,0 +1,8 @@
+name: tests
+on: [push, pull_request]
+jobs:
+  swift-test:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: swift test
