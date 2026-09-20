@@ -1,6 +1,10 @@
 # sonda
 
+<p align="center"><img src="docs/screens/inicio/inicio.png" width="300" alt="pantalla de inicio de sonda"></p>
+
 caja de herramientas de radio, red y sensores para el iPhone, con la estética de [girasol](https://github.com/kisnner26/girasol). inspirada en lo que hace un flipper zero, limitada a lo que un iPhone puede hacer de verdad y sin cuenta de pago de desarrollador. mira, mide y explica: no clona, no emula y no interfiere.
+
+<sub>capturas reales de un iPhone 15 Pro Max.</sub>
 
 ## qué hace
 
@@ -13,11 +17,20 @@ caja de herramientas de radio, red y sensores para el iPhone, con la estética d
 **red**
 - direcciones y subred de tus interfaces, **bonjour** (impresoras, AirPlay, SSH, HomeKit…), barrido de equipos de la subred, escáner de puertos, **ping ICMP** con pérdida y jitter, y DNS directo e inverso.
 
+<table><tr><td align="center"><img src="docs/screens/red/ping.png" width="230" alt="ping con pérdida y jitter"><br><sub>ping con pérdida y jitter</sub></td></tr></table>
+
+
 **sensores**
 - campo magnético con **detector de metales** (sonido y háptico), presión y altura relativa, brújula con coordenadas, y nivel de burbuja con pico de fuerza g.
 
+<table><tr><td align="center"><img src="docs/screens/sensores/campo-magnetico.png" width="230" alt="campo magnético y detector de metales"><br><sub>campo magnético y detector de metales</sub></td><td align="center"><img src="docs/screens/sensores/presion.png" width="230" alt="presión y altura"><br><sub>presión y altura</sub></td><td align="center"><img src="docs/screens/sensores/nivel.png" width="230" alt="nivel y fuerza g"><br><sub>nivel y fuerza g</sub></td></tr></table>
+
+
 **audio**
 - analizador de espectro con **detector de ultrasonido**, generador de tonos y barridos, teclado y decodificador **DTMF**, sonómetro y **morse** por sonido y linterna.
+
+<table><tr><td align="center"><img src="docs/screens/audio/morse.png" width="230" alt="morse por sonido y luz"><br><sub>morse por sonido y luz</sub></td></tr></table>
+
 
 **cámara**
 - lector de QR y códigos de barras que entiende Wi-Fi, contactos, geo, correo, SMS y claves OTP, y **avisa de enlaces sospechosos** (http, IP en vez de dominio, punycode, usuario falso antes de la @).
@@ -25,6 +38,10 @@ caja de herramientas de radio, red y sensores para el iPhone, con la estética d
 
 **herramientas**
 - visor hex de archivos, hashes (MD5, SHA, CRC-32) con comparación, conversiones (texto, hex, base64, binario, URL), generador de contraseñas con entropía y azar (dados, moneda).
+
+## estado
+
+probada en un iPhone 15 Pro Max: el ping ICMP contra internet, el campo magnético con su detector, la presión, el nivel y el morse funcionan. El resto de módulos (Bluetooth, barrido de equipos, puertos, Bonjour, espectro, cámara, herramientas) compilan y tienen su lógica probada con tests, pero aún no tienen capturas ni pruebas de campo.
 
 ## lo que un iPhone no puede (y sonda no finge)
 
