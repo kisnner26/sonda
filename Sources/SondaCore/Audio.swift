@@ -42,7 +42,13 @@ public enum Spectrum {
         let w = hann(n)
         let gain = w.reduce(0, +) / 2                       // ganancia coherente de la ventana
         let (re, im) = fft(zip(samples, w).map { $0 * $1 })
-        return (0..<n / 2).map { ($0 == 0 ? 0.5 : 1) * (re[$0] * re[$0] + im[$0] * im[$0]).squareRoot() / gain }
+        var out = [Double](repeating: 0, count: n / 2)
+        for k in 0..<n / 2 {
+            let power: Double = re[k] * re[k] + im[k] * im[k]
+            let scale: Double = k == 0 ? 0.5 : 1.0
+            out[k] = scale * power.squareRoot() / gain
+        }
+        return out
     }
 
     /// frecuencia del pico mas alto (Hz), con interpolacion parabolica entre compartimentos vecinos.
